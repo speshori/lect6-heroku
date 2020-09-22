@@ -4,14 +4,14 @@ import datetime
 import flask
 import requests
 import os
-from dotenv import load_dotenv
+import sys
 
 app = flask.Flask(__name__)
 
-consumer_key = os.environ("API_KEY")
-consumer_secret = os.environ("API_KEY_SECRET")
-access_token = os.environ("ACCESS_TOKEN")
-access_token_secret = os.environ("ACCESS_TOKEN_SECRET")
+consumer_key = os.environ["API_KEY"]
+consumer_secret = os.environ["API_KEY_SECRET"]
+access_token = os.environ["ACCESS_TOKEN"]
+access_token_secret = os.environ["ACCESS_TOKEN_SECRET"]
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
